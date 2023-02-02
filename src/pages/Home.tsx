@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
-import useFetchMovies, { MovieType } from '../api/movies';
+import useFetchMovies from '../api/movies';
 import { Hero, Loader } from '../components';
+import { MovieType } from '../types';
 
 type HomeProps = {
   type: MovieType;

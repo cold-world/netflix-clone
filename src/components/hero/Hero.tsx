@@ -1,9 +1,9 @@
 import React from 'react';
-import { IMovie, ITVShow } from '../../api/movies';
+import { IMovie, ITVShow, MovieType } from '../../types';
 import { HeroImage, HeroText } from '../index';
 
 type HeroProps = {
-  type: 'movie' | 'tv' | 'personal';
+  type: MovieType;
   randomMovie: IMovie | ITVShow | undefined;
 };
 

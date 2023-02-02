@@ -15,4 +15,6 @@ html {
 
 body {
   box-sizing: border-box;
+  @include custom-scrollbar;
+  background-color: $color-black;
 }

@@ -1,8 +1,9 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import BiSearch from '../icons/SearchIcon';
 
 function Header() {
+  const location = useLocation();
   return (
     <header className="header">
       <Link to="/">
@@ -13,32 +14,44 @@ function Header() {
         />
       </Link>
       <nav className="nav">
-        <ul className="nav__list">
-          <li className="nav__item">
-            <NavLink className="nav__link" to="/">
-              Home
-            </NavLink>
-          </li>
-          <li className="nav__item">
-            <NavLink className="nav__link" to="/tvshows">
-              TV Shows
-            </NavLink>
-          </li>
-          <li className="nav__item">
-            <NavLink className="nav__link" to="/movies">
-              Movies
-            </NavLink>
-          </li>
-          <li className="nav__item">
-            <NavLink className="nav__link" to="/personal">
-              My List
-            </NavLink>
-          </li>
-          <li className="nav__item">
-            <BiSearch className="nav__link nav__link-search" />
-          </li>
-        </ul>
-      </nav>
+      <ul className="nav__list">
+        <li className="nav__item">
+          <NavLink 
+            className={`nav__link ${location.pathname === '/' ? 'nav__link--active' : ''}`} 
+            to="/"
+          >
+            Home
+          </NavLink>
+        </li>
+        <li className="nav__item">
+          <NavLink 
+            className={`nav__link ${location.pathname === '/tvshows' ? 'nav__link--active' : ''}`} 
+            to="/tvshows"
+          >
+            TV Shows
+          </NavLink>
+        </li>
+        <li className="nav__item">
+          <NavLink 
+            className={`nav__link ${location.pathname === '/movies' ? 'nav__link--active' : ''}`} 
+            to="/movies"
+          >
+            Movies
+          </NavLink>
+        </li>
+        <li className="nav__item">
+          <NavLink 
+            className={`nav__link ${location.pathname === '/personal' ? 'nav__link--active' : ''}`} 
+            to="/personal"
+          >
+            My List
+          </NavLink>
+        </li>
+        <li className="nav__item">
+          <BiSearch className="nav__link nav__link-search" />
+        </li>
+      </ul>
+    </nav>
       <div className="user">user</div>
     </header>
   );

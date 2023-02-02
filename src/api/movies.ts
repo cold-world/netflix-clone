@@ -1,58 +1,8 @@
 import { useQuery } from 'react-query';
-
-interface IResponsePopularMovies {
-  page: number;
-  results: IMovie[];
-  total_pages: number;
-  total_results: number;
-}
-
-interface IResponsePopularTVShows {
-  page: number;
-  results: ITVShow[];
-  total_pages: number;
-  total_results: number;
-}
-
-export interface IMovie {
-  adult: boolean;
-  backdrop_path: string;
-  genre_ids: number[];
-  id: number;
-  original_language: string;
-  original_title: string;
-  overview: string;
-  popularity: number;
-  poster_path: string;
-  release_date: string;
-  title: string;
-  video: boolean;
-  vote_average: number;
-  vote_count: number;
-}
-
-export interface ITVShow {
-  adult: boolean;
-  backdrop_path: string;
-  id: number;
-  name: string;
-  original_language: string;
-  original_name: string;
-  overview: string;
-  poster_path: string;
-  media_type: string;
-  genre_ids: number[];
-  popularity: number;
-  first_air_date: string;
-  vote_average: number;
-  vote_count: number;
-  origin_country: string[];
-}
-
-export type MovieType = 'movie' | 'tv';
+import { IResponsePopularMovies, IResponsePopularTVShows, MovieType } from '../types';
 
 const fetchMovies = async (
-  type: string
+  type: MovieType
 ): Promise<IResponsePopularMovies | IResponsePopularTVShows> => {
   const response = await fetch(
     `
@@ -66,6 +16,6 @@ const fetchMovies = async (
   }
 };
 
-export default function useFetchMovies(type: string) {
+export default function useFetchMovies(type: MovieType) {
   return useQuery(['movies', type], fetchMovies.bind(null, type));
 }

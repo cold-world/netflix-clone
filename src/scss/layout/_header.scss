@@ -30,17 +30,20 @@
   }
 
   &__link {
-    color: white;
+    color: $color-white;
+    position: relative;
+    transition: color 0.5s;
+
+    &:hover,
+    &:active,
+    &--active {
+      color: $color-red;
+    }
 
     &-search {
       display: block;
       cursor: pointer;
       font-size: 2.5rem;
-
-      &:active,
-      &:focus {
-        color: black;
-      }
     }
   }
 }
