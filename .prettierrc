@@ -1,0 +1,10 @@
+{
+  "ignore": [
+    "**/css/**","**/build/**"
+  ],
+  "files": ["*.json"],
+  "singleQuote": true,
+   "doubleQuote": false,
+    "tabWidth": 2,
+  "semi": true
+}
