@@ -1,8 +1,12 @@
 import { useQuery } from 'react-query';
-import { IResponsePopularMovies, IResponsePopularTVShows, MovieType } from '../types';
+import {
+  IResponsePopularMovies,
+  IResponsePopularTVShows,
+  MovieType,
+} from '../types';
 
 const fetchMovies = async (
-  type: MovieType
+  type: MovieType = 'movie'
 ): Promise<IResponsePopularMovies | IResponsePopularTVShows> => {
   const response = await fetch(
     `
@@ -11,11 +15,10 @@ const fetchMovies = async (
   const data = await response.json();
   if (type === 'movie') {
     return data as IResponsePopularMovies;
-  } else {
-    return data as IResponsePopularTVShows;
   }
+  return data as IResponsePopularTVShows;
 };
 
 export default function useFetchMovies(type: MovieType) {
-  return useQuery(['movies', type], fetchMovies.bind(null, type));
+  return useQuery(['trending', type], fetchMovies.bind(null, type));
 }

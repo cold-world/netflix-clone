@@ -2,9 +2,9 @@
   "ignore": [
     "**/css/**","**/build/**"
   ],
-  "files": ["*.json"],
+  "files": ["**/*"],
   "singleQuote": true,
    "doubleQuote": false,
     "tabWidth": 2,
-  "semi": true
+    "semi": true
 }

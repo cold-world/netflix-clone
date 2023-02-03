@@ -3,16 +3,21 @@ import { IMovie, ITVShow } from '../../types';
 
 type HeroImageProps = {
   randomMovie: IMovie | ITVShow | undefined;
-
 };
 
-export function HeroImage({ randomMovie }: HeroImageProps) {
+function HeroImage({ randomMovie }: HeroImageProps) {
+  const title =
+    randomMovie && 'title' in randomMovie
+      ? randomMovie.title
+      : randomMovie && randomMovie.name;
+
   return (
-    <>
-      <img
-        className="hero__img"
-        src={`https://image.tmdb.org/t/p/original${randomMovie?.backdrop_path}`}
-      />
-    </>
+    <img
+      className="hero__img"
+      src={`https://image.tmdb.org/t/p/original${randomMovie?.backdrop_path}`}
+      alt={title}
+    />
   );
 }
+
+export default HeroImage;

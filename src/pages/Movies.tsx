@@ -15,11 +15,7 @@ function Movies({ type }: MoviesProps) {
 
   if (isLoading) return <Loader />;
   if (error) return <p>error...</p>;
-  return (
-    <>
-      <Hero randomMovie={randomMovie} type={type} />
-    </>
-  );
+  return <Hero randomMovie={randomMovie} />;
 }
 
 export default Movies;

@@ -5,13 +5,20 @@ type HeroTextProps = {
   randomMovie: IMovie | ITVShow | undefined;
 };
 
-export function HeroText({ randomMovie }: HeroTextProps) {
+function HeroText({ randomMovie }: HeroTextProps) {
   const title =
     randomMovie && 'title' in randomMovie
       ? randomMovie.title
       : randomMovie && randomMovie.name;
 
-  const voites = randomMovie?.vote_average.toFixed(2);
+  const raiting = randomMovie?.vote_average.toFixed(2);
+  const ratingColor =
+    // eslint-disable-next-line no-nested-ternary
+    raiting && +raiting > 6.9
+      ? 'raiting-green'
+      : raiting && +raiting > 5.9
+      ? 'raiting-orange'
+      : 'raiting-red';
 
   const year =
     randomMovie && 'release_date' in randomMovie
@@ -22,10 +29,14 @@ export function HeroText({ randomMovie }: HeroTextProps) {
     <div className="hero__info">
       <h2 className="hero__title">{title}</h2>
       <div className="hero__more">
-        <span>{voites}, </span>
+        {raiting && +raiting > 0 && (
+          <span className={ratingColor}>raiting {raiting}, </span>
+        )}
         <span>release date {year}</span>
       </div>
       <p className="hero__text">{randomMovie?.overview}</p>
     </div>
   );
 }
+
+export default HeroText;

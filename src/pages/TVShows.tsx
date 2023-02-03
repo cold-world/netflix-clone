@@ -15,11 +15,7 @@ function TVShows({ type }: TVShowsProps) {
 
   if (status === 'loading') return <Loader />;
   if (error) return <p>error...</p>;
-  return (
-    <>
-      <Hero randomMovie={randomMovie} type={type} />
-    </>
-  );
+  return <Hero randomMovie={randomMovie} />;
 }
 
 export default TVShows;

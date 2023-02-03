@@ -1,13 +1,13 @@
 import React from 'react';
-import { IMovie, ITVShow, MovieType } from '../../types';
-import { HeroImage, HeroText } from '../index';
+import { IMovie, ITVShow } from '../../types';
+import HeroImage from './HeroImage';
+import HeroText from './HeroText';
 
 type HeroProps = {
-  type: MovieType;
   randomMovie: IMovie | ITVShow | undefined;
 };
 
-export function Hero({ randomMovie }: HeroProps) {
+function Hero({ randomMovie }: HeroProps) {
   return (
     <div className="hero">
       <HeroImage randomMovie={randomMovie} />
@@ -15,3 +15,5 @@ export function Hero({ randomMovie }: HeroProps) {
     </div>
   );
 }
+
+export default Hero;

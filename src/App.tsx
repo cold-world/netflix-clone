@@ -17,9 +17,9 @@ export default function App() {
         <div className="app">
           <MainLayout>
             <Routes>
-              <Route path="/" element={<Home type='movie' />} />
-              <Route path="/movies" element={<Movies type='movie' />} />
-              <Route path="/tvshows" element={<TVShows type='tv' />} />
+              <Route path="/" element={<Home type="movie" />} />
+              <Route path="/movies" element={<Movies type="movie" />} />
+              <Route path="/tvshows" element={<TVShows type="tv" />} />
               <Route path="/personal" element={<Personal />} />
             </Routes>
           </MainLayout>
