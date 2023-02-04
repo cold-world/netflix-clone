@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import BiSearch from '../icons/SearchIcon';
+import BiSearch from '../components/icons/SearchIcon';
 import useScroll from '../hooks/useScroll';
 
 function Header() {
@@ -8,7 +8,11 @@ function Header() {
   const scrollDirection = useScroll();
 
   return (
-    <header className={`header ${scrollDirection === 'down' ? 'header-hide' : 'header-show'}`}>
+    <header
+      className={`header ${
+        scrollDirection === 'down' ? 'header-hide' : 'header-show'
+      }`}
+    >
       <Link to="/">
         <img
           className="header__logo"

@@ -4,3 +4,7 @@ export { default as HeroText } from './hero/HeroText';
 export { default as Loader } from './ui/Loader';
 export { default as MovieItem } from './movieItem/MovieItem';
 export { default as MovieList } from './movieList/MovieList';
+export { default as ArrowLeft } from './icons/ArrowLeft';
+export { default as ArrowRight } from './icons/ArrowRight';
+export { default as SearchIcon } from './icons/SearchIcon';
+export { default as Heading } from './heading/Heading';

@@ -5,13 +5,12 @@ type MovieItemProps = {
 };
 
 function MovieItem({ img }: MovieItemProps) {
+  const backdropImage = img
+    ? `https://image.tmdb.org/t/p/w500/${img}`
+    : 'https://rb.gy/ulxxee';
   return (
     <div className="item">
-      <img
-        className="item__image"
-        src={`https://image.tmdb.org/t/p/original${img}`}
-        alt="a"
-      />
+      <img className="item__image" src={backdropImage} alt="a" />
     </div>
   );
 }

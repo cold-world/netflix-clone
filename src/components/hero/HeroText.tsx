@@ -1,5 +1,6 @@
 import React from 'react';
 import { IMovie, ITVShow } from '../../types';
+import {Heading} from '../'
 
 type HeroTextProps = {
   randomMovie: IMovie | ITVShow | undefined;
@@ -27,7 +28,7 @@ function HeroText({ randomMovie }: HeroTextProps) {
 
   return (
     <div className="hero__info">
-      <h2 className="hero__title">{title}</h2>
+      <Heading className='hero__title' text={title} tag='h2' />
       <div className="hero__more">
         {raiting && +raiting > 0 && (
           <span className={ratingColor}>raiting {raiting}, </span>

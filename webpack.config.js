@@ -7,6 +7,7 @@ module.exports = {
   entry: './src/index.tsx',
   devtool: 'inline-source-map',
   devServer: {
+    hot: true,
     static: path.resolve(__dirname, 'dist'),
     port: 9000,
   },

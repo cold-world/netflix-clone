@@ -1,24 +1,15 @@
 import { useQuery } from 'react-query';
-import {
-  IResponsePopularMovies,
-  IResponsePopularTVShows,
-  MovieType,
-} from '../types';
+import { IResponsePopularMovies, IResponsePopularTVShows } from '../types';
 
 const fetchMovies = async (
-  type: MovieType = 'movie'
+  request: string
 ): Promise<IResponsePopularMovies | IResponsePopularTVShows> => {
-  const response = await fetch(
-    `
-    https://api.themoviedb.org/3/trending/${type}/week?api_key=${process.env.MOVIEDB_API_KEY}&page=1`
-  );
+  const response = await fetch(request);
   const data = await response.json();
-  if (type === 'movie') {
-    return data as IResponsePopularMovies;
-  }
-  return data as IResponsePopularTVShows;
+  return data;
 };
 
-export default function useFetchMovies(type: MovieType) {
-  return useQuery(['trending', type], fetchMovies.bind(null, type));
+export default function useFetchMovies(request: string) {
+  return useQuery(['movies', request], fetchMovies.bind(null, request));
 }
+// https://api.themoviedb.org/3/trending/tv?api_key=df9160c0ebafc69817cfafbb24c59e9b&with_genres=35

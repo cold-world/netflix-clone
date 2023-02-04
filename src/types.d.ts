@@ -47,4 +47,28 @@ export interface ITVShow {
   origin_country: string[];
 }
 
+export interface IRequest {
+  all: {
+    trending: string;
+  };
+  movies: {
+    trending: string;
+    topRated: string;
+    actionMovies: string;
+    comedyMovies: string;
+    horrorMovies: string;
+    romanceMovies: string;
+    documentaries: string;
+  };
+  tv: {
+    trending: string;
+    topRated: string;
+    actionMovies: string;
+    comedyMovies: string;
+    horrorMovies: string;
+    romanceMovies: string;
+    documentaries: string;
+  };
+}
+
 export type MovieType = 'movie' | 'tv';
