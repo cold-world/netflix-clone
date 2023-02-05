@@ -1,5 +1,6 @@
 import React from 'react';
 import { IMovie, ITVShow } from '../../types';
+import Loader from '../ui/Loader';
 import HeroImage from './HeroImage';
 import HeroText from './HeroText';
 
@@ -10,8 +11,14 @@ type HeroProps = {
 function Hero({ randomMovie }: HeroProps) {
   return (
     <div className="hero">
-      <HeroImage randomMovie={randomMovie} />
-      <HeroText randomMovie={randomMovie} />
+      {!randomMovie?.backdrop_path ? (
+        <Loader />
+      ) : (
+        <>
+          <HeroImage randomMovie={randomMovie} />
+          <HeroText randomMovie={randomMovie} />{' '}
+        </>
+      )}
     </div>
   );
 }

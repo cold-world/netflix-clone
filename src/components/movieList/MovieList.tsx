@@ -10,7 +10,6 @@ interface MovieListProps extends React.HTMLAttributes<HTMLDivElement> {
 
 function MovieList({ type, title }: MovieListProps) {
   const { handleClick, slideNumber, listRef } = useSliderClick();
-
   return (
     <div className="list">
       <Heading className="heading" tag="h4" text={title} />

@@ -63,9 +63,7 @@ export interface IRequest {
   tv: {
     trending: string;
     topRated: string;
-    actionMovies: string;
     comedyMovies: string;
-    horrorMovies: string;
     romanceMovies: string;
     documentaries: string;
   };
