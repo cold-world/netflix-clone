@@ -13,7 +13,7 @@ function TVShows() {
     <>
       <Hero randomMovie={randomMovie} />
       {dataArrayShows.map((item, index) => (
-        <MovieList key={item.title} type={item.type.data} title={item.title} />
+        <MovieList key={item.title} type={item.type.data} heading={item.title} />
       ))}
     </>
   );

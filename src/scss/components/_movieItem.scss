@@ -4,6 +4,8 @@
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s;
+  font-size: 1.5rem;
+
 
   &__image {
     width: 100%;
@@ -13,6 +15,40 @@
   }
 
   &:hover {
-    transform: scale(1.1);
+    width: 45rem;
+    height: 45rem;
+
+    &__image {
+      height: 25rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+  &__icons {
+    font-size: 4rem;
+    color: $color-grey;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  &__icon {
+    cursor: pointer;
+    display: inline-block;
+    
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+    &:hover {
+      color: $color-white;
+    }
+  }
+
+  &__desc {
   }
 }

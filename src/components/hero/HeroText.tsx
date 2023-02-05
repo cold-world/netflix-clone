@@ -1,6 +1,7 @@
 import React from 'react';
 import { IMovie, ITVShow } from '../../types';
 import {Heading} from '../'
+import { raitingHandler } from '../../utils/helpers';
 
 type HeroTextProps = {
   randomMovie: IMovie | ITVShow | undefined;
@@ -12,15 +13,8 @@ function HeroText({ randomMovie }: HeroTextProps) {
       ? randomMovie.title
       : randomMovie && randomMovie.name;
 
-  const raiting = randomMovie?.vote_average.toFixed(2);
-  const ratingColor =
-    // eslint-disable-next-line no-nested-ternary
-    raiting && +raiting > 6.9
-      ? 'raiting-green'
-      : raiting && +raiting > 5.9
-      ? 'raiting-orange'
-      : 'raiting-red';
-
+  const {raiting, ratingColor} = raitingHandler(randomMovie?.vote_average);
+   
   const year =
     randomMovie && 'release_date' in randomMovie
       ? randomMovie.release_date
