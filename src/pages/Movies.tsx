@@ -12,7 +12,7 @@ function Movies() {
 
   return (
     <>
-      <Hero randomMovie={randomMovie} />
+      <Hero movie={randomMovie} />
       {dataArrayMovies.map((item, index) => (
         <MovieList key={item.title} type={item.type.data} heading={item.title}  />
       ))}

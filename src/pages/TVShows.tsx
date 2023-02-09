@@ -11,7 +11,7 @@ function TVShows() {
   const randomMovie = useRandomMovie({ data: topRated });
   return (
     <>
-      <Hero randomMovie={randomMovie} />
+      <Hero movie={randomMovie} />
       {dataArrayShows.map((item, index) => (
         <MovieList key={item.title} type={item.type.data} heading={item.title} />
       ))}

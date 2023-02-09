@@ -2,19 +2,16 @@ import React from 'react';
 import { IMovie, ITVShow } from '../../types';
 
 type HeroImageProps = {
-  randomMovie: IMovie | ITVShow | undefined;
+  movie: IMovie | ITVShow | undefined;
 };
 
-function HeroImage({ randomMovie }: HeroImageProps) {
-  const title =
-    randomMovie && 'title' in randomMovie
-      ? randomMovie.title
-      : randomMovie && randomMovie.name;
+function HeroImage({ movie }: HeroImageProps) {
+  const title = movie && 'title' in movie ? movie.title : movie && movie.name;
 
   return (
     <img
       className="hero__img"
-      src={`https://image.tmdb.org/t/p/original${randomMovie?.backdrop_path}`}
+      src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
       alt={title}
     />
   );

@@ -27,6 +27,7 @@ export interface IMovie {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  genres?: {id: number, name: string}[]
 }
 
 export interface ITVShow {
@@ -45,6 +46,7 @@ export interface ITVShow {
   vote_average: number;
   vote_count: number;
   origin_country: string[];
+  genres?: {id: number, name: string}[]
 }
 
 export interface IRequest {

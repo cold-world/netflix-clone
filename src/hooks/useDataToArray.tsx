@@ -1,4 +1,4 @@
-import useFetchMovies from '../api/movies';
+import {useFetchMovies} from '../api/movies';
 import requests from '../utils/requests';
 
 function useDataArray() {

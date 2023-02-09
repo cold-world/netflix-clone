@@ -2,10 +2,11 @@ import { IRequest } from '../types';
 
 const API_KEY = process.env.MOVIEDB_API_KEY;
 const BASE_URL = 'https://api.themoviedb.org/3';
+export const fetchByIdUrl = (id: string) => `${BASE_URL}/movie/${id}?api_key=${API_KEY}`
 
 const requests: IRequest = {
   all: {
-    trending: `${BASE_URL}/trending/all/week?api_key=${API_KEY}&language=en-US`,
+    trending: `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=en-US&`,
   },
   movies: {
     trending: `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=en-US`,

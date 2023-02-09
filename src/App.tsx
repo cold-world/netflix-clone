@@ -7,6 +7,7 @@ import Movies from './pages/Movies';
 import Personal from './pages/Personal';
 import TVShows from './pages/TVShows';
 import './scss/main.scss';
+import Movie from './pages/Movie';
 
 const client = new QueryClient();
 
@@ -20,6 +21,7 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/movies" element={<Movies />} />
               <Route path="/tvshows" element={<TVShows />} />
+              <Route path="/movie/:id" element={<Movie />} />
               <Route path="/personal" element={<Personal />} />
             </Routes>
           </MainLayout>

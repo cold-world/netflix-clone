@@ -1,6 +1,7 @@
 /* eslint-disable no-prototype-builtins */
 import React from 'react';
 import { ArrowLeft, ArrowRight, Heading, MovieItem } from '..';
+import {Link} from 'react-router-dom';
 import useSliderClick from '../../hooks/useSliderClick';
 import {
   IResponsePopularMovies,
@@ -28,7 +29,7 @@ function MovieList({ type, heading }: MovieListProps) {
           />
         )}
         <div className="list__container" ref={listRef}>
-          {type?.results.map((movie) => {
+          {type?.results.map((movie, index) => {
             let movieTitle: string;
             if (movie.hasOwnProperty('title')) {
               movieTitle = (movie as IMovie).title;
@@ -36,6 +37,7 @@ function MovieList({ type, heading }: MovieListProps) {
               movieTitle = (movie as ITVShow).name;
             }
             return (
+              <Link to={`/movie/${movie.id}`}>
               <MovieItem
                 key={movie.id}
                 img={movie.backdrop_path}
@@ -44,6 +46,7 @@ function MovieList({ type, heading }: MovieListProps) {
                 movieRating={movie.vote_average}
                 movieGenres={movie.genre_ids}
               />
+              </Link>
             );
           })}
         </div>

@@ -1,3 +1,5 @@
+import { IMovie, ITVShow } from '../types.d';
+
 export const raitingHandler = (movieRating: number | undefined) => {
   const raiting = movieRating?.toFixed(2);
   const ratingColor =
@@ -43,4 +45,10 @@ const genres: { [key: string]: string } = {
 
 export const getGenres = (genreIds: number[]): string[] => {
   return genreIds.map((id) => genres[id]);
+};
+
+export const getYear = (randomMovie: IMovie | ITVShow | undefined) => {
+  return randomMovie && 'release_date' in randomMovie
+    ? randomMovie.release_date
+    : randomMovie && randomMovie.first_air_date;
 };

@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { IResponsePopularMovies, IResponsePopularTVShows } from '../types';
+import { IMovie, IResponsePopularMovies, IResponsePopularTVShows, ITVShow } from '../types';
 
 const fetchMovies = async (
   request: string
@@ -9,7 +9,19 @@ const fetchMovies = async (
   return data;
 };
 
-export default function useFetchMovies(request: string) {
-  return useQuery(['movies', request], fetchMovies.bind(null, request));
+export function useFetchMovies(request: string) {
+  return useQuery(['movies', request], () => fetchMovies(request));
 }
-// https://api.themoviedb.org/3/trending/tv?api_key=df9160c0ebafc69817cfafbb24c59e9b&with_genres=35
+
+
+const fetchMovie = async (
+  id: string
+): Promise<IMovie | ITVShow> => {
+  const response = await fetch(id);
+  const data = await response.json();
+  return data;
+};
+
+export function useFetchMovie(id: string) {
+  return useQuery(['movie', id], () => fetchMovie(id));
+}

@@ -1,11 +1,12 @@
 .item {
   width: 35rem;
   height: 20rem;
+  font-size: 1.2rem;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.2s;
-  font-size: 1.5rem;
-
+  overflow: hidden;
+  transition: all 0.3s;
+  background-color: $color-black-light;
 
   &__image {
     width: 100%;
@@ -15,40 +16,78 @@
   }
 
   &:hover {
-    width: 45rem;
-    height: 45rem;
+    transform: scale(1.1);
 
-    &__image {
-      height: 25rem;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        to top,
+        rgba($color-black, 0.7),
+        transparent
+      );
+      content: '';
     }
+  
   }
 
   &__info {
+    position: absolute;
+    bottom: -4rem;
     display: flex;
+    opacity: 0;
+    visibility: hidden;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    border-radius: 5px;
+    z-index: 10;
+    width: 100%;
+    padding: 0 1rem;
+    transition: all 0.3s;
 
   }
+
+  &__title {
+    flex: 0 0 100%;
+    color: $color-white;
+  }
+
   &__icons {
-    font-size: 4rem;
-    color: $color-grey;
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
-  }
-  &__icon {
-    cursor: pointer;
-    display: inline-block;
+    color: $color-grey;
+    font-size: 3.5rem;
     
-    &:not(:last-child) {
-      margin-right: 1rem;
-    }
+    
+  }
+
+  &__icon {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: all 0.2s;
+
+
     &:hover {
       color: $color-white;
     }
   }
-
-  &__desc {
+  span {
+    margin-right: 2rem;
   }
+}
+
+
+.item:hover .item__info {
+  opacity: 1;
+  visibility: visible;
+  bottom: 0;
+
+
 }

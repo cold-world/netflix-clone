@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 7rem;
+  font-size: 1.5rem;
+
+
+  &__info {
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: $color-grey;
+      font-size: 1.5rem;
+      
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    a {
+      color: $color-grey;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
