@@ -4,9 +4,15 @@ import {
   useFetchMovie,
   useFetchMovieCast,
   useFetchMovieTeaser,
+  useFetchSimilarMovies,
 } from '../api/movies';
-import { fetchByIdUrl, fetchCast, fetchTeaser } from '../utils/requests';
-import { Hero, Teaser } from '../components';
+import {
+  fetchByIdUrl,
+  fetchCast,
+  fetchSimilar,
+  fetchTeaser,
+} from '../utils/requests';
+import { Hero, MovieList, Teaser } from '../components';
 
 function Movie() {
   const { id } = useParams();
@@ -16,10 +22,12 @@ function Movie() {
   const { data } = useFetchMovie(fetchByIdUrl(id!, type));
   const { data: cast } = useFetchMovieCast(fetchCast(id!, type));
   const { data: teasers } = useFetchMovieTeaser(fetchTeaser(id!, type));
+  const { data: similar } = useFetchSimilarMovies(fetchSimilar(id!));
   return (
     <div className="movie-page">
       <Hero movie={data} cast={cast?.cast} />
-      <Teaser teaser={teasers?.results[0]} />
+      <Teaser teaser={teasers?.results} />
+      <MovieList heading="Similar movies" type={similar} />
     </div>
   );
 }

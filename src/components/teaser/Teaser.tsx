@@ -4,15 +4,23 @@ import { Heading } from '..';
 import { IResultTeaser } from '../../types';
 
 type TeaserProps = {
-  teaser: IResultTeaser;
+  teaser: IResultTeaser[] | undefined;
 };
 
 function Teaser({ teaser }: TeaserProps) {
-  const teaserUrl = `https://www.youtube.com/embed/${teaser?.key}`;
+  const officialTeaser = teaser?.find(
+    (item) => item.type === 'Teaser' || 'Trailer'
+  );
+  const teaserUrl = `https://www.youtube.com/embed/${officialTeaser?.key}`;
   return (
     <div className="teaser">
       <Heading className="teaser__heading heading" tag="h4" text="Teaser" />
-      <iframe width="860" height="515" src={teaserUrl} title={teaser?.name} />
+      <iframe
+        width="860"
+        height="515"
+        src={teaserUrl}
+        title={officialTeaser?.name}
+      />
     </div>
   );
 }

@@ -49,3 +49,15 @@ const fetchMovieTeaser = async (id: string): Promise<IMovieTeaser> => {
 export function useFetchMovieTeaser(id: string) {
   return useQuery(['teasers', id], () => fetchMovieTeaser(id));
 }
+
+const fetchSimilarMovies = async (
+  id: string
+): Promise<IResponsePopularMovies> => {
+  const response = await fetch(id);
+  const data = await response.json();
+  return data;
+};
+
+export function useFetchSimilarMovies(id: string) {
+  return useQuery(['movies-similar', id], () => fetchSimilarMovies(id));
+}

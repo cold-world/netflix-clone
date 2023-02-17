@@ -19,9 +19,10 @@ function MovieList({ type, heading }: MovieListProps) {
   const { handleClick, slideNumber, listRef } = useSliderClick();
   const { pathname } = useLocation();
   const isTv = pathname.includes('/tvshows');
-
+  const listRule = pathname.includes('/tv/') || pathname.includes('/movie/');
+  const listClassName = listRule ? 'list list-down' : 'list';
   return (
-    <div className="list">
+    <div className={listClassName}>
       <Heading tag="h4" text={heading} />
       <div className="list__wrapper">
         {slideNumber > 0 && (

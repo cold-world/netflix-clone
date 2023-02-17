@@ -11,6 +11,9 @@ export const fetchCast = (id: string, type: string) =>
 export const fetchTeaser = (id: string, type: string) =>
   `${BASE_URL}/${type}/${id}/videos?api_key=${API_KEY}`;
 
+export const fetchSimilar = (id: string) =>
+  `${BASE_URL}/movie/${id}/similar?api_key=${API_KEY}`;
+
 const requests: IRequest = {
   all: {
     trending: `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=en-US&`,

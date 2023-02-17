@@ -8,6 +8,7 @@ import Personal from './pages/Personal';
 import TVShows from './pages/TVShows';
 import './scss/main.scss';
 import Movie from './pages/Movie';
+import ScrollToTop from './hooks/ScrollToTop';
 
 const client = new QueryClient();
 
@@ -15,6 +16,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <QueryClientProvider client={client}>
+        <ScrollToTop />
         <div className="app">
           <MainLayout>
             <Routes>
