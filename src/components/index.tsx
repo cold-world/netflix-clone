@@ -12,3 +12,5 @@ export { default as AddIcon } from './icons/AddIcon';
 export { default as LikeIcon } from './icons/Like';
 export { default as DislikeIcon } from './icons/Dislike';
 export { default as Heading } from './heading/Heading';
+export { default as CastList } from './castList/CastList';
+export { default as Teaser } from './teaser/Teaser';

@@ -6,6 +6,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(
@@ -14,7 +15,6 @@
       transparent
     );
     content: '';
-    z-index: -1;
   }
 
   &__container {
@@ -29,15 +29,15 @@
 
   &__img {
     position: absolute;
+    z-index: -1;
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: brightness(80%);
-    z-index: -1;
   }
 
   &__info {
-    width: 35%;
+    width: 80rem;
     margin-top: 40vh;
     margin-left: 7rem;
   }
@@ -56,8 +56,9 @@
     font-size: 1.5rem;
   }
 
-  &__cast {
-    flex: 1 1 0;
+  &__info-cast {
+    display: flex;
+    flex-direction: column;
   }
 }
 

@@ -1,12 +1,12 @@
 .item {
   width: 35rem;
   height: 20rem;
+  overflow: hidden;
   font-size: 1.2rem;
+  background-color: $color-black-light;
   border-radius: 5px;
   cursor: pointer;
-  overflow: hidden;
   transition: all 0.3s;
-  background-color: $color-black-light;
 
   &__image {
     width: 100%;
@@ -17,7 +17,6 @@
 
   &:hover {
     transform: scale(1.1);
-
 
     &::after {
       position: absolute;
@@ -32,24 +31,22 @@
       );
       content: '';
     }
-  
   }
 
   &__info {
     position: absolute;
     bottom: -4rem;
+    z-index: 10;
     display: flex;
-    opacity: 0;
-    visibility: hidden;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    border-radius: 5px;
-    z-index: 10;
     width: 100%;
     padding: 0 1rem;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
     transition: all 0.3s;
-
   }
 
   &__title {
@@ -63,31 +60,26 @@
     margin-bottom: 0.5rem;
     color: $color-grey;
     font-size: 3.5rem;
-    
-    
   }
 
   &__icon {
     display: inline-block;
-    cursor: pointer;
     margin-right: 1rem;
+    cursor: pointer;
     transition: all 0.2s;
-
 
     &:hover {
       color: $color-white;
     }
   }
+
   span {
     margin-right: 2rem;
   }
 }
 
-
 .item:hover .item__info {
-  opacity: 1;
-  visibility: visible;
   bottom: 0;
-
-
+  visibility: visible;
+  opacity: 1;
 }

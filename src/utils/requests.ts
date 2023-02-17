@@ -2,7 +2,14 @@ import { IRequest } from '../types';
 
 const API_KEY = process.env.MOVIEDB_API_KEY;
 const BASE_URL = 'https://api.themoviedb.org/3';
-export const fetchByIdUrl = (id: string) => `${BASE_URL}/movie/${id}?api_key=${API_KEY}`
+export const fetchByIdUrl = (id: string, type: string) =>
+  `${BASE_URL}/${type}/${id}?api_key=${API_KEY}`;
+
+export const fetchCast = (id: string, type: string) =>
+  `${BASE_URL}/${type}/${id}/credits?api_key=${API_KEY}`;
+
+export const fetchTeaser = (id: string, type: string) =>
+  `${BASE_URL}/${type}/${id}/videos?api_key=${API_KEY}`;
 
 const requests: IRequest = {
   all: {

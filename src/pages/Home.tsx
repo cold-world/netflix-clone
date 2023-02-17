@@ -13,7 +13,11 @@ function Home() {
     <>
       <Hero movie={randomMovie} />
       {dataArrayMovies.map((item) => (
-        <MovieList key={item.title} type={item.type.data} heading={item.title} />
+        <MovieList
+          key={item.title}
+          type={item.type.data}
+          heading={item.title}
+        />
       ))}
     </>
   );

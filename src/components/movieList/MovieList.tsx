@@ -1,7 +1,7 @@
 /* eslint-disable no-prototype-builtins */
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Heading, MovieItem } from '..';
-import {Link} from 'react-router-dom';
 import useSliderClick from '../../hooks/useSliderClick';
 import {
   IResponsePopularMovies,
@@ -17,10 +17,12 @@ interface MovieListProps extends React.HTMLAttributes<HTMLDivElement> {
 
 function MovieList({ type, heading }: MovieListProps) {
   const { handleClick, slideNumber, listRef } = useSliderClick();
+  const { pathname } = useLocation();
+  const isTv = pathname.includes('/tvshows');
 
   return (
     <div className="list">
-      <Heading className="heading" tag="h4" text={heading} />
+      <Heading tag="h4" text={heading} />
       <div className="list__wrapper">
         {slideNumber > 0 && (
           <ArrowLeft
@@ -37,15 +39,17 @@ function MovieList({ type, heading }: MovieListProps) {
               movieTitle = (movie as ITVShow).name;
             }
             return (
-              <Link to={`/movie/${movie.id}`}>
-              <MovieItem
+              <Link
                 key={movie.id}
-                img={movie.backdrop_path}
-                movieTitle={movieTitle}
-                movieDesc={movie.overview}
-                movieRating={movie.vote_average}
-                movieGenres={movie.genre_ids}
-              />
+                to={isTv ? `/tv/${movie.id}` : `/movie/${movie.id}`}
+              >
+                <MovieItem
+                  img={movie.backdrop_path}
+                  movieTitle={movieTitle}
+                  movieDesc={movie.overview}
+                  movieRating={movie.vote_average}
+                  movieGenres={movie.genre_ids}
+                />
               </Link>
             );
           })}

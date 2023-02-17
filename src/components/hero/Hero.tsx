@@ -1,16 +1,18 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { IMovie, ITVShow } from '../../types';
+import { Cast, IMovie, ITVShow } from '../../types';
 import Loader from '../ui/Loader';
-import { HeroPoster, HeroImage, HeroText, Heading } from '..';
+import { HeroPoster, HeroImage, HeroText, CastList } from '..';
 
 type HeroProps = {
   movie: IMovie | ITVShow | undefined;
+  cast?: Cast[];
 };
 
-function Hero({ movie }: HeroProps) {
+function Hero({ movie, cast }: HeroProps) {
   const { pathname } = useLocation();
-  const moviePageConfig = pathname.includes('/movie/');
+  const moviePageConfig =
+    pathname.includes('/movie/') || pathname.includes('/tv/');
   return (
     <div className="hero">
       {!movie?.backdrop_path ? (
@@ -20,17 +22,13 @@ function Hero({ movie }: HeroProps) {
           <HeroImage movie={movie} />
           <div className="hero__container">
             {moviePageConfig && <HeroPoster moviePoster={movie?.poster_path} />}
-            <div className="hero__cont">
-            <HeroText
-              customStyle={moviePageConfig ? 'hero__info--right' : ''}
-              movie={movie}
-            />
-            {moviePageConfig && (
-              <div className="hero__cast">
-                <Heading className="heading" tag="h4" text="Cast" />
-              </div>
-            )}
-            </div> 
+            <div className="hero__info-cast">
+              <HeroText
+                customStyle={moviePageConfig ? 'hero__info--right' : ''}
+                movie={movie}
+              />
+              {moviePageConfig && <CastList cast={cast} />}
+            </div>
           </div>
         </>
       )}

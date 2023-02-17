@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
 interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
@@ -7,7 +8,11 @@ interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
 
 function Heading({ text, tag, ...props }: HeadingProps) {
   const HeadingTag = tag;
-  return <HeadingTag {...props}>{text}</HeadingTag>;
+  return (
+    <HeadingTag className="heading" {...props}>
+      {text}
+    </HeadingTag>
+  );
 }
 
 export default Heading;

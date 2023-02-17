@@ -6,22 +6,22 @@ import { getGenres, getYear, raitingHandler } from '../../utils/helpers';
 interface HeroTextProps {
   movie: IMovie | ITVShow | undefined;
   customStyle?: string;
-};
+}
 
 function HeroText({ movie, customStyle }: HeroTextProps) {
-  const title =
-    movie && 'title' in movie
-      ? movie.title
-      : movie && movie.name;
+  const title = movie && 'title' in movie ? movie.title : movie && movie.name;
 
   const { raiting, ratingColor } = raitingHandler(movie?.vote_average);
 
   const year = getYear(movie);
 
-  const genres = movie &&
-  movie?.genre_ids ? getGenres(movie.genre_ids) : 
-  movie?.genres ? movie.genres.map(item => item.name) : undefined;
-
+  const genres =
+    // eslint-disable-next-line no-nested-ternary
+    movie && movie?.genre_ids
+      ? getGenres(movie.genre_ids)
+      : movie?.genres
+      ? movie.genres.map((item) => item.name)
+      : undefined;
 
   return (
     <div className={`${customStyle} hero__info`}>

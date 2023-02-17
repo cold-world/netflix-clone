@@ -21,7 +21,7 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/movies" element={<Movies />} />
               <Route path="/tvshows" element={<TVShows />} />
-              <Route path="/movie/:id" element={<Movie />} />
+              <Route path="/:type/:id" element={<Movie />} />
               <Route path="/personal" element={<Personal />} />
             </Routes>
           </MainLayout>

@@ -27,7 +27,7 @@ export interface IMovie {
   video: boolean;
   vote_average: number;
   vote_count: number;
-  genres?: {id: number, name: string}[]
+  genres?: { id: number; name: string }[];
 }
 
 export interface ITVShow {
@@ -46,7 +46,7 @@ export interface ITVShow {
   vote_average: number;
   vote_count: number;
   origin_country: string[];
-  genres?: {id: number, name: string}[]
+  genres?: { id: number; name: string }[];
 }
 
 export interface IRequest {
@@ -72,3 +72,56 @@ export interface IRequest {
 }
 
 export type MovieType = 'movie' | 'tv';
+
+export interface Cast {
+  adult: boolean;
+  gender: number;
+  id: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
+  cast_id: number;
+  character: string;
+  credit_id: string;
+  order: number;
+}
+
+export interface Crew {
+  adult: boolean;
+  gender: number;
+  id: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
+  credit_id: string;
+  department: string;
+  job: string;
+}
+
+export interface IMovieCast {
+  id: number;
+  cast: Cast[];
+  crew: Crew[];
+}
+
+export interface IResultTeaser {
+  iso_639_1: string;
+  iso_3166_1: string;
+  name: string;
+  key: string;
+  site: string;
+  size: number;
+  type: string;
+  official: boolean;
+  published_at: Date;
+  id: string;
+}
+
+export interface IMovieTeaser {
+  id: number;
+  results: IResultVideo[];
+}
