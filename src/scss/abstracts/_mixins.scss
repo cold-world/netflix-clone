@@ -1,13 +1,42 @@
+/* stylelint-disable at-rule-no-unknown */
 @mixin custom-scrollbar {
   &::-webkit-scrollbar {
     width: 0.25rem;
     background-color: transparent;
   }
+
   &::-webkit-scrollbar-thumb {
     background-color: $color-red;
     border-radius: 0.125rem;
   }
+
   &::-webkit-scrollbar-track {
     background-color: transparent;
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 375px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 425px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
   }
 }

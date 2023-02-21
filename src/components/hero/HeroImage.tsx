@@ -11,7 +11,10 @@ function HeroImage({ movie }: HeroImageProps) {
   return (
     <img
       className="hero__img"
-      src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
+      src={
+        `https://image.tmdb.org/t/p/original${movie?.backdrop_path}` ||
+        `https://image.tmdb.org/t/p/original${movie?.poster_path}`
+      }
       alt={title}
     />
   );

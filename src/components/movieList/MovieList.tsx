@@ -50,6 +50,7 @@ function MovieList({ type, heading }: MovieListProps) {
                   movieDesc={movie.overview}
                   movieRating={movie.vote_average}
                   movieGenres={movie.genre_ids}
+                  poster={movie.poster_path}
                 />
               </Link>
             );

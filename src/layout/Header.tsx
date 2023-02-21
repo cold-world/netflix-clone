@@ -57,7 +57,7 @@ function Header() {
               className={`nav__link ${
                 location.pathname === '/personal' ? 'nav__link--active' : ''
               }`}
-              to="/personal"
+              to="#"
             >
               My List
             </NavLink>

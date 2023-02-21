@@ -8,6 +8,7 @@ type MovieItemProps = {
   movieDesc: string;
   movieRating: number;
   movieGenres: number[];
+  poster: string;
 };
 
 function MovieItem({
@@ -16,10 +17,14 @@ function MovieItem({
   movieDesc,
   movieRating,
   movieGenres,
+  poster,
 }: MovieItemProps) {
   const [isHovered, setIsHovered] = useState(false);
+  // eslint-disable-next-line no-nested-ternary
   const backdropImage = img
     ? `https://image.tmdb.org/t/p/original/${img}`
+    : poster
+    ? `https://image.tmdb.org/t/p/original/${poster}`
     : 'https://rb.gy/ulxxee';
 
   const { raiting, ratingColor } = raitingHandler(movieRating);

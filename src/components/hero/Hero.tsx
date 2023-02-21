@@ -23,10 +23,7 @@ function Hero({ movie, cast }: HeroProps) {
           <div className="hero__container">
             {moviePageConfig && <HeroPoster moviePoster={movie?.poster_path} />}
             <div className="hero__info-cast">
-              <HeroText
-                customStyle={moviePageConfig ? 'hero__info--right' : ''}
-                movie={movie}
-              />
+            <HeroText movie={movie} />
               {moviePageConfig && <CastList cast={cast} />}
             </div>
           </div>

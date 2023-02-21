@@ -4,24 +4,29 @@
   padding: 2rem 7rem;
   font-size: 1.5rem;
 
+  @include respond(tab-port) {
+    align-items: center;
+    padding: 2rem;
+    font-size: 1rem;
+  }
 
   &__info {
     p {
-      margin: 0;
-      font-size: 0.9rem;
+      margin: 0 3rem 0 0;
       color: $color-grey;
+      font-size: 0.9rem;
       font-size: 1.5rem;
-      
     }
   }
 
   &__links {
     display: flex;
     flex-wrap: wrap;
+
     a {
-      color: $color-grey;
       margin-right: 1rem;
       margin-bottom: 1rem;
+      color: $color-grey;
     }
   }
 }

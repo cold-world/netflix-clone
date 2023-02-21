@@ -1,4 +1,7 @@
 .heading {
-  margin-left: 7rem;
+  margin-left: 4rem;
   font-size: 3rem;
+  @include respond(tab-land) {
+    font-size: 2rem;
+  }
 }

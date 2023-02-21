@@ -27,7 +27,7 @@ function Movie() {
     <div className="movie-page">
       <Hero movie={data} cast={cast?.cast} />
       <Teaser teaser={teasers?.results} />
-      <MovieList heading="Similar movies" type={similar} />
+      <MovieList heading="You may also like" type={similar} />
     </div>
   );
 }

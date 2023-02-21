@@ -50,6 +50,7 @@ specifiers:
   stylelint-prettier: ^2.0.0
   stylelint-scss: ^4.3.0
   ts-loader: ^9.4.2
+  turnstone: ^2.2.0
   typescript: ^4.9.4
   webpack: ^5.75.0
   webpack-cli: ^5.0.1
@@ -109,6 +110,7 @@ devDependencies:
   stylelint-prettier: 2.0.0_hzc4avq63uavvrxva5ujb3uabe
   stylelint-scss: 4.3.0_stylelint@14.16.1
   ts-loader: 9.4.2_3fkjkrd3audxnith3e7fo4fnxi
+  turnstone: 2.2.0_react@18.2.0
   webpack: 5.75.0_webpack-cli@5.0.1
   webpack-dev-server: 4.11.1_rjsyjcrmk25kqsjzwkvj3a2evq
 
@@ -3372,6 +3374,11 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /escape-string-regexp/5.0.0:
+    resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
+    engines: {node: '>=12'}
+    dev: true
+
   /eslint-config-airbnb-base/15.0.0_ohdts44xlqyeyrlje4qnefqeay:
     resolution: {integrity: sha512-xaX3z4ZZIcFLvh2oUNvcX5oEofXda7giYmuplVxoOg5A7EXJMrUyqRgR+mhDhPK8LZ4PttFOBvCYDbX3sUoUig==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -3949,6 +3956,10 @@ packages:
     dependencies:
       locate-path: 6.0.0
       path-exists: 4.0.0
+    dev: true
+
+  /first-of-type/1.0.0:
+    resolution: {integrity: sha512-dJSXNtPoczg+C5GBU3KW4U14zSK40uz43lNdJeXjv71PoCYdlrXdv8FnLJRFgFmSh7ocP4rvjIJDp4X/Ooz7vQ==}
     dev: true
 
   /flat-cache/2.0.1:
@@ -5721,6 +5732,10 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
+  /natural-selection/1.0.1:
+    resolution: {integrity: sha512-+8ZPOu57Yw2fqAq3XGtdbVkJGwp8k4VYOGqx0Eg91nsKYn/utMOhKc+97jOTxqVcGwVMzCn2Bz6pTWFWGGH5kQ==}
+    dev: true
+
   /negotiator/0.6.3:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
@@ -6632,7 +6647,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /read-cache/1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
@@ -7138,6 +7152,12 @@ packages:
       split-string: 3.1.0
     dev: true
 
+  /setify/1.0.4:
+    resolution: {integrity: sha512-8CtOpqS2KtK7P40PeXVYzzDMw+vgrQtdy6QUGamSIFYoKSvB1OrIxnqiGmCD0r7lOm2BIebsqxuNNE+eY1b9Wg==}
+    dependencies:
+      natural-selection: 1.0.1
+    dev: true
+
   /setprototypeof/1.1.0:
     resolution: {integrity: sha512-BvE/TwpZX4FXExxOxZyRGQQv651MSwmWKZGqvmPcRIjDqWub67kTKuIMx43cZZrS/cBBzwBcNDWoFxt2XEFIpQ==}
 
@@ -7367,6 +7387,13 @@ packages:
   /specificity/0.4.1:
     resolution: {integrity: sha512-1klA3Gi5PD1Wv9Q0wUoOQN1IWAuPu0D1U03ThXTr0cJ20+/iq2tHSDnK7Kk/0LXJ1ztUB2/1Os0wKmfyNgUQfg==}
     hasBin: true
+    dev: true
+
+  /split-match/0.2.2:
+    resolution: {integrity: sha512-epdfqxwKjfpD3wE2aXPtwiWvic6z0V7tg+DGEfsH6i/eXdAfia9keoz1XB/Byz7OqSPmUuVM8jy1x8pv+7cH3A==}
+    dependencies:
+      escape-string-regexp: 5.0.0
+      prop-types: 15.8.1
     dev: true
 
   /split-string/3.1.0:
@@ -7769,6 +7796,14 @@ packages:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
     dev: true
 
+  /swr/1.3.0_react@18.2.0:
+    resolution: {integrity: sha512-dkghQrOl2ORX9HYrMDtPa7LTVHJjCTeZoB1dqTbnnEDlSvN8JEKpYIYurDfvbQFUUS8Cg8PceFVZNkW0KNNYPw==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: true
+
   /table/5.4.6:
     resolution: {integrity: sha512-wmEc8m4fjnob4gt5riFRtTu/6+4rSe12TpAELNSqHMfF3IqnA+CH37USM6/YR3qRZv7e56kAEAtd6nKZaxe0Ug==}
     engines: {node: '>=6.0.0'}
@@ -7954,6 +7989,25 @@ packages:
     dependencies:
       tslib: 1.14.1
       typescript: 4.9.4
+    dev: true
+
+  /turnstone-recent-searches/0.5.0:
+    resolution: {integrity: sha512-OFGRM92OKAx467QTYeJXJY5Uj1XhPiMmqiXwL1/wPky38SLXotyxVjFpMvCb8MuGsY61fsJDkF2vsmseae42VA==}
+    dev: true
+
+  /turnstone/2.2.0_react@18.2.0:
+    resolution: {integrity: sha512-/vlU5uOEqZuEaN/4n62uCNbZScGUf0eA2uEoCpy+L5zWR3zpMcYAnASmjlW2lDF+rIXpgeElFTV8z0E98HfG0g==}
+    dependencies:
+      escape-string-regexp: 5.0.0
+      first-of-type: 1.0.0
+      prop-types: 15.8.1
+      setify: 1.0.4
+      split-match: 0.2.2
+      swr: 1.3.0_react@18.2.0
+      turnstone-recent-searches: 0.5.0
+      use-debounce: 7.0.1_react@18.2.0
+    transitivePeerDependencies:
+      - react
     dev: true
 
   /type-check/0.4.0:
@@ -8172,6 +8226,15 @@ packages:
   /urix/0.1.0:
     resolution: {integrity: sha512-Am1ousAhSLBeB9cG/7k7r2R0zj50uDRlZHPGbazid5s9rlF1F/QKYObEKSIunSjIOkJZqwRRLpvewjEkM7pSqg==}
     deprecated: Please see https://github.com/lydell/urix#deprecated
+    dev: true
+
+  /use-debounce/7.0.1_react@18.2.0:
+    resolution: {integrity: sha512-fOrzIw2wstbAJuv8PC9Vg4XgwyTLEOdq4y/Z3IhVl8DAE4svRcgyEUvrEXu+BMNgMoc3YND6qLT61kkgEKXh7Q==}
+    engines: {node: '>= 10.0.0'}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
     dev: true
 
   /use/3.1.1:
