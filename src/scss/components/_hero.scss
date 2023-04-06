@@ -22,12 +22,22 @@
     display: flex;
     width: 100%;
     padding: 3rem;
+    @include respond(tab-land) {
+      padding: 1rem;
+    }
   }
 
   &__poster {
-    flex: 1;
+    flex-basis: 50rem;
     margin-top: 10rem;
     margin-left: 5rem;
+    @include respond(desktop) {
+      flex: 1 0 20vw;
+      margin-left: 2rem;
+    }
+    @include respond(tab-land) {
+      display: none;
+    }
   }
 
   &__poster img {
@@ -49,6 +59,10 @@
     max-width: 80rem;
     margin-top: 40vh;
     margin-left: 4rem;
+    @include respond(tab-port) {
+      margin-top: 50vh;
+      margin-left: 2rem;
+    }
   }
 
   &__title {
@@ -57,12 +71,19 @@
     @include respond(desktop) {
       font-size: 5rem;
     }
-    
+    @include respond(tab-port) {
+      margin-bottom: 2rem;
+      line-height: 1;
+    }
   }
 
   &__text {
     margin-bottom: 2rem;
     font-size: 1.7rem;
+
+    @include respond(tab-land) {
+      font-size: 1.5rem;
+    }
   }
 
   &__more {

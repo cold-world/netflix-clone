@@ -13,11 +13,15 @@
     width: 13rem;
     height: 19rem;
     background-color: $color-black-light;
+    @include respond(desktop) {
+      width: 9rem;
+      height: 14rem;
+    }
   }
 
   &__img {
-    width: 13rem;
-    height: 19rem;
+    width: 100%;
+    height: 100%;
   }
 
   &__name {

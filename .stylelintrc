@@ -23,14 +23,7 @@
     "string-no-newline": [true, {"severity": "warning", "value": "never"}],
     "import-notation": "string",
     "string-quotes":"single",
-    "at-rule-no-unknown": [
-      true,
-      {
-        "ignoreAtRules": [
-          "extend"
-        ]
-      }
-    ]
+    "at-rule-no-unknown": null
   },
   "ignoreFiles": ["**/css/**", "**/build/**" ]
   }

@@ -12,7 +12,7 @@ function useSliderClick() {
 
     timeoutId = window.setTimeout(() => {
       if (listRef.current) {
-        const distance = listRef.current.getBoundingClientRect().x - 70;
+        const distance = listRef.current.getBoundingClientRect().x - 20;
         if (direction === 'right' && slideNumber < 15) {
           setSlideNumber(slideNumber + 1);
           listRef.current.style.transform = `translateX(${-360 + distance}px)`;

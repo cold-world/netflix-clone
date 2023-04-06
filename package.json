@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --open --hot",
     "stylelint": "stylelint '**/*.scss'",
-    "stylelint:fix": "stylelint '**/*.scss' --fix"
+    "stylelint:fix": "stylelint '**/*.scss' --fix",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
